@@ -1,0 +1,97 @@
+/* src/app/globals.css */
+@import "tailwindcss";
+
+@theme {
+  /* Xploria color palette - Premium Dark Mode Theme */
+  --color-xploria-background:    #0d0e12;
+  --color-xploria-card:          #16171b;
+  --color-xploria-primary:       #008cff;
+  --color-xploria-primary-hover: #0077d9;
+  --color-xploria-text:          #f1f5f9;
+  --color-xploria-muted:         #64748b;
+  --color-xploria-accent-gold:   #f59e0b;
+  --color-xploria-accent-silver: #475569;
+  --color-xploria-accent-bronze: #d97706;
+
+  /* Font */
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-color: #24262c transparent;
+    scrollbar-width: thin;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-xploria-background);
+    color: var(--color-xploria-text);
+    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Native date/time input styling on dark background */
+  input[type="date"],
+  input[type="time"] {
+    color-scheme: dark;
+  }
+
+  /* Custom scrollbar for WebKit */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #24262c;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2e3039;
+  }
+}
+
+@layer components {
+  /* Reusable form input base class */
+  .input {
+    width: 100%;
+    background-color: #1a1b20;
+    border: 1px solid #24262c;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--color-xploria-text);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    outline: none;
+  }
+
+  .input::placeholder {
+    color: #4b5563;
+  }
+
+  .input:focus {
+    border-color: var(--color-xploria-primary);
+    background-color: #1e2026;
+    box-shadow: 0 0 0 3px rgba(0, 140, 255, 0.25);
+  }
+
+  select.input {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+    padding-right: 2.5rem;
+  }
+}
