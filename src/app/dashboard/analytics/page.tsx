@@ -1,4 +1,4 @@
-
+// src/app/dashboard/analytics/page.tsx
 "use client";
 
 import { useMemo } from "react";
