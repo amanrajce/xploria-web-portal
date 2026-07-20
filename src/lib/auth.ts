@@ -15,6 +15,8 @@ import {
   updateProfile,
   type User as FirebaseUser,
   type Unsubscribe,
+  setPersistence,
+  browserSessionPersistence,
 } from "firebase/auth";
 import {
   doc,
@@ -120,6 +122,7 @@ export async function registerUser(
   }
 
   try {
+    await setPersistence(auth, browserSessionPersistence);
     const credential = await createUserWithEmailAndPassword(auth, trimmedEmail, password);
 
     // Set the Auth profile display name before syncing to Firestore so both
@@ -162,6 +165,7 @@ export async function loginUser(email: string, password: string): Promise<Result
   }
 
   try {
+    await setPersistence(auth, browserSessionPersistence);
     const credential = await signInWithEmailAndPassword(auth, trimmedEmail, password);
     // Re-sync on every login — self-heals any missing/stale user doc.
     return await ensureUserDocument(credential.user);

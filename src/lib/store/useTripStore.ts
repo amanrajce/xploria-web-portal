@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import { db, auth } from "@/lib/firebase";
 import {
   collection,
@@ -715,6 +715,7 @@ export const useTripStore = create<TripState>()(
     }),
     {
       name: "xploria-trip-store",
+      storage: createJSONStorage(() => sessionStorage),
       // Only persist serializable data, not computed functions
       partialize: (s) => ({
         trips: s.trips,
