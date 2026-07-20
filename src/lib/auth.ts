@@ -70,11 +70,13 @@ export async function ensureUserDocument(user: FirebaseUser): Promise<Result<Use
     const userRef = doc(db, "users", user.uid);
     const existing = await getDoc(userRef);
 
+    const existingData = existing.exists() ? existing.data() as UserDoc : null;
+
     const profileFields = {
       uid: user.uid,
       email: user.email ?? "",
-      displayName: user.displayName ?? (user.email ? user.email.split("@")[0] : "Traveler"),
-      photoURL: user.photoURL ?? null,
+      displayName: user.displayName || existingData?.displayName || (user.email ? user.email.split("@")[0] : "Traveler"),
+      photoURL: user.photoURL || existingData?.photoURL || null,
       updatedAt: serverTimestamp(),
     };
 

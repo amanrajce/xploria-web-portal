@@ -66,7 +66,7 @@ export default function AnalyticsPage() {
 
   if (!activeTrip) {
     return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
+      <div className="p-4 flex items-center justify-center min-h-[60vh]">
         <div className="text-center border-2 border-dashed border-slate-200 bg-white rounded-2xl p-12 max-w-md shadow-sm">
           <p className="text-xploria-muted font-medium">Select a trip to view spending analytics.</p>
         </div>
@@ -76,7 +76,7 @@ export default function AnalyticsPage() {
 
   if (expenses.length === 0) {
     return (
-      <div className="p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
+      <div className="p-4 sm:p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
         <header>
           <h1 className="text-4xl font-extrabold text-xploria-text tracking-tight">Analytics</h1>
           <p className="text-xploria-muted mt-1 text-sm font-medium">{activeTrip.title}</p>
@@ -94,7 +94,7 @@ export default function AnalyticsPage() {
     .sort(([, a], [, b]) => b - a)[0];
 
   return (
-    <div className="p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
       <header>
         <h1 className="text-4xl font-extrabold text-xploria-text tracking-tight">Analytics</h1>
         <div className="flex items-center gap-2 text-xploria-muted mt-1 text-sm font-medium">
@@ -132,7 +132,7 @@ export default function AnalyticsPage() {
               const pct = totalSpent > 0 ? (amount / totalSpent) * 100 : 0;
               return (
                 <div key={cat} className="flex items-center gap-4">
-                  <span className="text-sm text-xploria-muted w-28 shrink-0 font-medium">{CATEGORY_LABELS[cat]}</span>
+                  <span className="text-xs sm:text-sm text-xploria-muted w-20 sm:w-28 shrink-0 font-medium truncate">{CATEGORY_LABELS[cat]}</span>
                   <div className="flex-1 h-6 bg-slate-100 rounded-lg overflow-hidden relative">
                     <div
                       className="h-full rounded-lg transition-all duration-700 flex items-center pl-2"
@@ -143,7 +143,7 @@ export default function AnalyticsPage() {
                       )}
                     </div>
                   </div>
-                  <span className="text-sm font-semibold text-xploria-text w-24 text-right shrink-0">
+                  <span className="text-xs sm:text-sm font-semibold text-xploria-text w-16 sm:w-24 text-right shrink-0">
                     ₹{amount.toLocaleString("en-IN")}
                   </span>
                 </div>

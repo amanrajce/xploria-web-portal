@@ -133,7 +133,7 @@ export default function ShowcaseDashboard() {
   const activeTripsCount = trips.length;
 
   return (
-    <div className="p-6 space-y-6 max-w-[1600px] mx-auto animate-in fade-in duration-300">
+    <div className="p-4 sm:p-6 space-y-6 max-w-[1600px] mx-auto animate-in fade-in duration-300">
       
       {/* Dynamic Info Header Bar */}
       <header className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-[#16171b] border border-[#24262c] rounded-2xl p-5 shadow-xl">

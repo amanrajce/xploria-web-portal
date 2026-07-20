@@ -50,7 +50,7 @@ export default function ExpensesPage() {
 
   if (!activeTrip) {
     return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
+      <div className="p-4 flex items-center justify-center min-h-[60vh]">
         <div className="text-center border-2 border-dashed border-slate-200 bg-white rounded-2xl p-12 max-w-md shadow-sm">
           <p className="text-xploria-muted font-medium">Select or create a trip to log expenses.</p>
         </div>
@@ -104,7 +104,7 @@ export default function ExpensesPage() {
   };
 
   return (
-    <div className="p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
@@ -319,7 +319,7 @@ export default function ExpensesPage() {
             return (
               <div
                 key={exp.id}
-                className="bg-xploria-card border border-slate-200/80 rounded-xl px-5 py-4 flex items-center justify-between gap-4 hover:border-slate-300 shadow-[0_4px_15px_rgba(0,0,0,0.01)] transition-all duration-200"
+                className="bg-xploria-card border border-slate-200/80 rounded-xl px-5 py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-slate-300 shadow-[0_4px_15px_rgba(0,0,0,0.01)] transition-all duration-200"
               >
                 <div className="flex items-center gap-4 min-w-0">
                   <div className={clsx("p-2 rounded-lg shrink-0", CAT_COLORS[exp.category])}>

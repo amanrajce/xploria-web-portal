@@ -100,7 +100,7 @@ export default function TripsPage() {
   };
 
   return (
-    <div className="p-8 max-w-6xl mx-auto space-y-10 text-left">
+    <div className="p-4 sm:p-8 max-w-6xl mx-auto space-y-10 text-left">
       {/* Header */}
       <header>
         <h1 className="text-4xl font-extrabold text-white tracking-tight">Your Trips</h1>
@@ -312,7 +312,7 @@ export default function TripsPage() {
                       <div className="text-left">
                         <h3 className="font-bold text-white text-base leading-snug">{trip.title}</h3>
                         <p className="text-xs text-xploria-muted font-medium mt-0.5">{trip.destination}</p>
-                        <div className="flex items-center gap-3 mt-2.5 text-xs text-xploria-muted font-semibold">
+                        <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-2.5 text-xs text-xploria-muted font-semibold">
                           <span className="flex items-center gap-1">
                             <CalendarRange className="w-3.5 h-3.5" />
                             {new Date(trip.startDate).toLocaleDateString("en-IN", {

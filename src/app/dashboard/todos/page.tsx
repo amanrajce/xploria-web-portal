@@ -16,7 +16,7 @@ export default function TodosPage() {
 
   if (!activeTrip) {
     return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
+      <div className="p-4 flex items-center justify-center min-h-[60vh]">
         <div className="text-center border-2 border-dashed border-[#24262c] bg-xploria-card rounded-2xl p-12 max-w-md shadow-2xl">
           <p className="text-xploria-muted font-bold">Select a trip to manage your to-do list.</p>
         </div>
@@ -40,7 +40,7 @@ export default function TodosPage() {
   };
 
   return (
-    <div className="p-8 max-w-3xl mx-auto space-y-8 animate-in fade-in duration-200 text-left">
+    <div className="p-4 sm:p-8 max-w-3xl mx-auto space-y-8 animate-in fade-in duration-200 text-left">
       <header>
         <h1 className="text-4xl font-extrabold text-white tracking-tight">To-do List</h1>
         <div className="flex items-center gap-2 text-xploria-muted mt-1 text-sm font-semibold">

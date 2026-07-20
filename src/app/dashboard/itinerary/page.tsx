@@ -38,7 +38,7 @@ export default function ItineraryPage() {
 
   if (!activeTrip) {
     return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
+      <div className="p-4 flex items-center justify-center min-h-[60vh]">
         <div className="text-center border-2 border-dashed border-gray-800 rounded-2xl p-12 max-w-md">
           <p className="text-xploria-muted">Select a trip to build your itinerary.</p>
         </div>
@@ -80,7 +80,7 @@ export default function ItineraryPage() {
     ITEM_TYPES.find((t) => t.value === type) ?? ITEM_TYPES[0];
 
   return (
-    <div className="p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200 text-left">
+    <div className="p-4 sm:p-8 max-w-5xl mx-auto space-y-8 animate-in fade-in duration-200 text-left">
       <div className="flex items-start justify-between">
         <div>
           <h1 className="text-4xl font-extrabold text-white tracking-tight">Itinerary</h1>
